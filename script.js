@@ -1,10 +1,12 @@
 //your code here
 //your code here
-const textbox = document.getElementById("evaluatedText");
-const wordCount = document.getElementById("wordCount");
+const input_area = document.getElementById("evaluatedText");
+const wordCount=document.getElementById("wordCount");
 
-textbox.addEventListener("input", function() {
-    let text = this.value.trim();
-    text = text.replace(/[^a-zA-Z0-9\s]/g, ""); // remove non-alphanumeric characters
-    wordCount.innerHTML = text.split(/\s+/).length;
-});
+
+
+input_area.addEventListener("input",()=>{ 
+    let txt =input_area.value.trim();
+    wordCount.textContent=txt.split(/\s+/).filter(
+        (item) => item).length;
+    });
